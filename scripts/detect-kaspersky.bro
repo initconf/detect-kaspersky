@@ -61,9 +61,11 @@ event HTTP::log_http (rec: HTTP::Info)
 
 	for (mtypes in rec$resp_mime_types) 
 	{ 
-		if (watched_resp_mime_types in rec$resp_mime_types[mtypes]) 
+	   if (watched_resp_mime_types in rec$resp_mime_types[mtypes]) 
+       { 
                 	NOTICE([$note=Mime, $id=rec$id, $msg=fmt("Kaspersky %s seen from host %s", rec$resp_mime_types[mtypes], rec$id$orig_h), $identifier=cat(rec$id$orig_h,rec$resp_mime_types[mtypes]),$suppress_for=1 hrs]);
                 	NOTICE([$note=UserAgent, $id=rec$id, $msg=fmt("Kaspersky %s seen from host %s", rec$resp_mime_types[mtypes], rec$id$orig_h), $identifier=cat(rec$id$orig_h,rec$resp_mime_types[mtypes]),$suppress_for=1 hrs]);
+       } 
 	} 
 } 
 

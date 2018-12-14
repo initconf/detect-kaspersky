@@ -1,0 +1,6 @@
+[package]
+description=kaspersky 
+script_dir = scripts
+version = 0.1 
+tags = kaspersky antivirus 
+test_command = ( cd tests && btest -d )

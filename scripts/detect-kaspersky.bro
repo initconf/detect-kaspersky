@@ -2,7 +2,7 @@ module Kaspersky;
 
 #@load ./kaspersky_urls.bro 
 
-redef Config::config_files += { "config/KASPERSKY.ips" };
+#redef Config::config_files += { "config/KASPERSKY.ips" };
 
 export {
         redef enum Notice::Type += {
@@ -15,7 +15,7 @@ export {
 
         global watched_resp_mime_types = /application\/x-kaspavupdate|application\/x-kaspavdb/ &redef ; 
 
-	option kaspersky_ips: set[addr]= {37.48.82.67, 94.75.236.123,} ; 
+	global kaspersky_ips: set[addr]= {37.48.82.67, 94.75.236.123,} &redef ; 
 	global watched_kasperksy_urls: pattern &redef ; 
 
 

@@ -23,6 +23,22 @@ Detailed Notes:
 Detail Alerts and descriptions: 
 *******************************
 
+Notices generated are:
+    - Kaspersky::Mime
+    - Kaspersky::URL  
+    - Kaspersky::IP
+
+
+Please Note: 
+    a) Kaspersky::IP - New IPs not in kaspersky_ips - so please update the data structure with this IP
+    b) Kaspersky::URL - Only new URLs which are not in kaspersky_urls.bro - so please update this. 
+
+(I wanted to use config framework for Kaspersky::IP but not all version of zeek/bro support it. For now, you'd have to update data structure manually - eg. 
+        redef kaspersky_ips += { new_ip, } ; 
+        OR
+        redef watched_kasperksy_urls += /new\.urls\/links/ ; 
+
+
 Heuristics are simple: 
 -----------------------
 :: 

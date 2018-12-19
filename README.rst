@@ -1,5 +1,5 @@
 =================================================================================
-Bro package to detect kaspersky anti-virus in your network
+Zeek package to detect kaspersky anti-virus in your network
 =================================================================================
 
 Credits: Special Thanks to Partha Banerjee, LBNL and Michael Smitasin, LBNL 

@@ -3,10 +3,8 @@
 #empty_field	(empty)
 #unset_field	-
 #path	notice
-#open	2018-12-14-01-30-16
+#open	2019-01-16-19-35-31
 #fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	fuid	file_mime_type	file_desc	proto	note	msg	sub	src	dst	p	n	peer_descr	actions	suppress_for	dropped	remote_location.country_code	remote_location.region	remote_location.city	remote_location.latitude	remote_location.longitude
 #types	time	string	addr	port	addr	port	string	string	string	enum	enum	string	string	addr	addr	port	count	string	set[enum]	interval	bool	string	string	string	double	double
-0.000000	-	-	-	-	-	-	-	-	-	Kaspersky::ConfigFileReadFail	config/KASPERSKY.ips/Input::READER_CONFIG: Init: cannot open config/KASPERSKY.ips	-	-	-	-	-	-	Notice::ACTION_LOG	3600.000000	F	-	-	-	-	-
 1544740085.757819	CHhAvVGS1DHFjwGM9	192.168.0.8	61909	94.75.236.123	80	-	-	-	tcp	Kaspersky::URL	GET http://94.75.236.123/updaters/updater.xml.test	-	192.168.0.8	94.75.236.123	80	-	-	Notice::ACTION_EMAIL,Notice::ACTION_LOG	3600.000000	F	-	-	-	-	-
-1544740085.916836	-	192.168.0.8	61909	94.75.236.123	80	-	-	-	tcp	Kaspersky::UserAgent	Kaspersky text/html seen from host 192.168.0.8	-	192.168.0.8	94.75.236.123	80	-	-	Notice::ACTION_EMAIL,Notice::ACTION_LOG	3600.000000	F	-	-	-	-	-
-#close	2018-12-14-01-30-16
+#close	2019-01-16-19-35-31

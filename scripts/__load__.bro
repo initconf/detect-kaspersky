@@ -3,3 +3,5 @@
 @load ./detect-kaspersky.bro 
 #@load ./config.bro 
 @load ./kaspersky_urls.bro
+
+redef  Kaspersky::kaspersky_ips += {80.231.123.131, 193.45.6.7} ; 

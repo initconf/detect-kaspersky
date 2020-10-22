@@ -7,7 +7,7 @@ export {
     redef watched_resp_mime_types += /application\/x-kaspavupdate|application\/x-kaspavdb/ ; 
 }
 
-event bro_init() {
+event zeek_init() {
     #Config::set_value("Kaspersky::kaspersky_ip", );
 }
 
@@ -18,7 +18,7 @@ event bro_init() {
 #    return new_value;
 #    }
 #
-#event bro_init()
+#event zeek_init()
 #    {
 #    Option::set_change_handler("TestModule::testaddr", change_addr);
 #    }

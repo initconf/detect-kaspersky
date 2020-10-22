@@ -1,0 +1,11 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	http
+#open	2020-06-09-10-57-31
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	trans_depth	method	host	uri	referrer	version	user_agent	origin	request_body_len	response_body_len	status_code	status_msg	info_code	info_msg	tags	username	password	proxied	orig_fuids	orig_filenames	orig_mime_types	resp_fuids	resp_filenames	resp_mime_types
+#types	time	string	addr	port	addr	port	count	string	string	string	string	string	string	string	count	count	count	string	count	string	set[enum]	string	string	set[string]	vector[string]	vector[string]	vector[string]	vector[string]	vector[string]	vector[string]
+1533658233.773168	C6KSbU2n3FayRZBtt5	128.3.116.128	49163	94.75.236.123	80	1	GET	94.75.236.123	/updaters/updater.xml.dif	-	1.1	*B0cBAAQAjyajPZi3NqrqOlLbWHEBn0dO1ZHOsQUs2xEOPsB8LFbPAkWACAAAA8AA	-	0	3376	200	OK	-	-	(empty)	-	-	-	-	-	-	FfaGRs29m97s1FNjif	-	application/x-kaspavupdate
+1533658234.194367	C6KSbU2n3FayRZBtt5	128.3.116.128	49163	94.75.236.123	80	2	GET	94.75.236.123	/updaters/updater.xml.klz	-	1.1	*B0cBAAQAjyajPZi3NqrqOlLbWHEBn0dO1ZHOsQUs2xEOPsB8LFbPAkWACAAAA8AA	-	0	1140	200	OK	-	-	(empty)	-	-	-	-	-	-	F7qnOg2sxshiJmnbnd	-	application/x-kaspavdb
+#close	2020-06-09-10-57-31

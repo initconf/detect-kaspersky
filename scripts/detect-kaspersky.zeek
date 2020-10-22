@@ -1,6 +1,6 @@
 module Kaspersky;
 
-#@load ./kaspersky_urls.bro 
+#@load ./kaspersky_urls.zeek 
 
 #redef Config::config_files += { "config/KASPERSKY.ips" };
 
@@ -61,11 +61,11 @@ event HTTP::log_http (rec: HTTP::Info)
 
 	for (mtypes in rec$resp_mime_types) 
 	{ 
-	   if (watched_resp_mime_types in rec$resp_mime_types[mtypes]) 
-       { 
-                	NOTICE([$note=Mime, $id=rec$id, $msg=fmt("Kaspersky %s seen from host %s", rec$resp_mime_types[mtypes], rec$id$orig_h), $identifier=cat(rec$id$orig_h,rec$resp_mime_types[mtypes]),$suppress_for=6 hrs]);
-                	NOTICE([$note=UserAgent, $id=rec$id, $msg=fmt("Kaspersky %s seen from host %s", rec$resp_mime_types[mtypes], rec$id$orig_h), $identifier=cat(rec$id$orig_h,rec$resp_mime_types[mtypes]),$suppress_for=6 hrs]);
-       } 
+		if (watched_resp_mime_types in rec$resp_mime_types[mtypes]) 
+		{ 
+                	NOTICE([$note=Mime, $id=rec$id, $msg=fmt("Kaspersky %s seen from host %s", rec$resp_mime_types[mtypes], rec$id$orig_h), $identifier=cat(rec$id$orig_h,rec$resp_mime_types[mtypes]),$suppress_for=1 hrs]);
+                	NOTICE([$note=UserAgent, $id=rec$id, $msg=fmt("Kaspersky %s seen from host %s", rec$resp_mime_types[mtypes], rec$id$orig_h), $identifier=cat(rec$id$orig_h,rec$resp_mime_types[mtypes]),$suppress_for=1 hrs]);
+		} 
 	} 
 } 
 
@@ -82,7 +82,7 @@ event http_request(c: connection, method: string, original_URI: string, unescape
 
         if ( watched_kasperksy_urls in unescaped_URI && resp_ip !in kaspersky_ips )
         {
-         NOTICE([$note=Kaspersky::IP, $msg=message, $conn=c, $identifier=cat(c$id$orig_h, c$id$resp_h),$suppress_for=6 hrs]);
+         NOTICE([$note=Kaspersky::IP, $msg=message, $conn=c, $identifier=cat(c$id$orig_h),$suppress_for=60 min]);
         }
 
 } 
